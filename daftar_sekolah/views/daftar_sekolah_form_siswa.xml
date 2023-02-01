@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_siswa_kanban" model="ir.ui.view">
+        <field name="name">daftar.sekolah.form.siswa.kanban</field>
+        <field name="model">daftar.sekolah.form.siswa</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="nama_siswa"/>
+                <field name="umur_siswa"/>
+                <field name="tgl_lahir_siswa"/>
+                <field name="jenis_kelamin_siswa"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Name: <field name="nama_siswa"/>
+                                    </li>
+                                    <li>
+                                        Umur: <field name="umur_siswa"/>
+                                    </li>
+                                    <li>
+                                        TTL: <field name="tgl_lahir_siswa"/>
+                                    </li>
+                                    <li>
+                                        JKL: <field name="jenis_kelamin_siswa"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban> 
+        </field>
+    </record>
+
+
+    <record id="view_siswa_form" model="ir.ui.view">
+        <field name="name">daftar.sekolah.form.siswa.form </field>
+        <field name="model">daftar.sekolah.form.siswa</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nama_siswa" attrs="{'readonly':[('umur_siswa','=',18)]}"/>
+                            <field name="umur_siswa"/>
+                        </group>
+
+                        <group>
+                            <field name="tgl_lahir_siswa"/>
+                            <field name="jenis_kelamin_siswa"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_siswa_tree" model="ir.ui.view">
+        <field name="name">daftar.sekolah.form.siswa.tree</field>
+        <field name="model">daftar.sekolah.form.siswa</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nama_siswa"/>
+                <field name="umur_siswa"/>
+                <field name="tgl_lahir_siswa"/>
+                <field name="jenis_kelamin_siswa"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="form_siswa" model="ir.actions.act_window">
+        <field name="name">Daftar Siswa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">daftar.sekolah.form.siswa</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+
+</odoo>
