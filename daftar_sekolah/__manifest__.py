@@ -11,7 +11,8 @@
         'sale',
         'mail',
         'website_slides',
-        'board'
+        'board',
+        'dev_employee_master_data'
 
     ],
 

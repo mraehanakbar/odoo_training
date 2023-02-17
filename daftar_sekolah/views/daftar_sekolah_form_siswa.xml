@@ -48,11 +48,15 @@
                         <group>
                             <field name="nama_siswa" attrs="{'readonly':[('umur_siswa','=',18)]}"/>
                             <field name="umur_siswa"/>
+                            <field name="related_fields"/>
+                            <field name="employee_organization"/>
                         </group>
 
                         <group>
                             <field name="tgl_lahir_siswa"/>
                             <field name="jenis_kelamin_siswa"/>
+                            <field name="email_data_employee"/>
+                            <field name="current_organization" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
